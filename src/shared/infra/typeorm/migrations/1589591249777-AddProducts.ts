@@ -16,16 +16,15 @@ export default class AddProducts1589591249777 implements MigrationInterface {
           {
             name: 'name',
             type: 'varchar',
+            isUnique: true,
           },
           {
             name: 'price',
-            type: 'decimal',
-            scale: 2,
-            precision: 10,
+            type: 'decimal(10,2)',
           },
           {
             name: 'quantity',
-            type: 'integer',
+            type: 'int',
           },
           {
             name: 'created_at',

@@ -29,11 +29,11 @@ export default class AddOrderProducts1589596509371
           },
           {
             name: 'price',
-            type: 'money',
+            type: 'decimal(10,2)',
           },
           {
             name: 'quantity',
-            type: 'integer',
+            type: 'int',
           },
           {
             name: 'created_at',
@@ -51,7 +51,7 @@ export default class AddOrderProducts1589596509371
     await queryRunner.createForeignKey(
       'orders_products',
       new TableForeignKey({
-        name: 'productKey',
+        name: 'productFK',
         columnNames: ['product_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'products',
@@ -62,7 +62,7 @@ export default class AddOrderProducts1589596509371
     await queryRunner.createForeignKey(
       'orders_products',
       new TableForeignKey({
-        name: 'orderKey',
+        name: 'orderFK',
         columnNames: ['order_id'],
         referencedColumnNames: ['id'],
         referencedTableName: 'orders',
